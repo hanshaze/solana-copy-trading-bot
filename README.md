@@ -550,6 +550,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 This software is for educational and research purposes only. Trading cryptocurrencies involves significant risk and may result in the loss of your capital. You should carefully consider whether trading is suitable for you in light of your financial condition. The authors are not responsible for any losses incurred through the use of this software.
 
+
 ## 📞 Support
 
 - **Telegram**: [@hanshazee](https://t.me/hanshazee)
