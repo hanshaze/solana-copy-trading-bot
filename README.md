@@ -9,7 +9,7 @@
 
 ## 🌟 Features
 
-### 🎯 **Core Trading Capabilities**
+### 🎯 **Core Solana Copy Trading Bot Capabilities**
 - **Copy Trading**: Automatically replicate successful trades from target wallets
 - **Sniper Trading**: Lightning-fast token launch detection and execution
 - **MEV Bot**: Capture arbitrage opportunities and front-run transactions
@@ -37,9 +37,9 @@
 - **Customizable Alerts**: Configurable notification preferences
 - **Balance Monitoring**: Automatic wallet balance tracking
 
-## 🏗️ Architecture
+## 🏗️ Solana Copy Trading Bot Architecture
 
-### **System Architecture Overview**
+### **Solana Copy Trading Bot System Architecture Overview**
 
 ```mermaid
 graph TB
@@ -114,7 +114,7 @@ graph TB
     O --> U
 ```
 
-### **Transaction Flow Diagram**
+### **Solana Copy Trading Bot Transaction Flow Diagram**
 
 ```mermaid
 flowchart TD
@@ -190,7 +190,7 @@ flowchart TD
     SkipMEV --> MonitorTx
 ```
 
-### **Data Flow Architecture**
+### **Solana Copy Trading Bot Data Flow Architecture**
 
 ```mermaid
 graph LR
@@ -228,7 +228,7 @@ graph LR
     G --> K
 ```
 
-## 🚀 Quick Start
+## 🚀Solana Copy Trading Bot Quick Start
 
 ### **Prerequisites**
 - Node.js 18+ 
@@ -283,7 +283,7 @@ JITO_TIP=100000
 PRIORITIZATION_FEE_LAMPORTS=10000
 ```
 
-### **Running the Bot**
+### **Running the Solana Copy Trading Bot**
 
 ```bash
 # Start the bot
@@ -309,7 +309,7 @@ node index.js
 - **Refresh** - Update status and balance
 - **Settings** - Configure bot parameters
 
-## ⚙️ Advanced Configuration
+## ⚙️Solana Copy Trading Bot Advanced Configuration
 
 ### **Swap Methods**
 
@@ -375,7 +375,7 @@ const riskConfig = {
 };
 ```
 
-## 🔧 Technical Details
+## 🔧Solana Copy Trading Bot Technical Details
 
 ### **Transaction Parsing**
 
@@ -443,7 +443,7 @@ const shredStream = new ShredStream({
 - **Balance Alerts**: Low balance warnings
 - **Performance Alerts**: Performance threshold notifications
 
-## 🛡️ Security Features
+## 🛡️Solana Copy Trading Bot Security Features
 
 ### **Wallet Security**
 - **Private Key Management**: Secure private key handling
@@ -500,7 +500,7 @@ const shredStream = new ShredStream({
 4. **Position Management**: Manage MEV positions
 5. **Exit Strategy**: Optimize MEV exit timing
 
-## 🚨 Troubleshooting
+## 🚨Solana Copy Trading Bot Troubleshooting
 
 ### **Common Issues**
 
@@ -534,11 +534,11 @@ Solution: Verify bot token and chat ID configuration
 - Use alternative swap methods
 - Check wallet balance
 
-## 📝 License
+## 📝Solana Copy Trading Bot License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🤝 Contributing
+## 🤝Solana Copy Trading Bot Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -546,12 +546,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## ⚠️ Disclaimer
+## ⚠️Solana Copy Trading Bot Disclaimer
 
 This software is for educational and research purposes only. Trading cryptocurrencies involves significant risk and may result in the loss of your capital. You should carefully consider whether trading is suitable for you in light of your financial condition. The authors are not responsible for any losses incurred through the use of this software.
 
 
-## 📞 Support
+## 📞Solana Copy Trading Bot Support
 
 - **Telegram**: [@hanshazee](https://t.me/hanshazee)
 - **Email**: hicrs423@gmail.com
@@ -562,4 +562,4 @@ This software is for educational and research purposes only. Trading cryptocurre
 
 **⭐ Star this repository if you find it helpful!**
 
-**�� Happy Trading!** 
+**�� Happy Solana Copy Trading Bot!** 
