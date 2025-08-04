@@ -1,45 +1,59 @@
 # 🚀 Solana Copy Trading Bot - Advanced MEV & Sniper Trading System
 
+> **The most advanced Solana copy trading bot with MEV capabilities, sniper trading, and offchain transaction signing for maximum speed and efficiency. Trade on PumpFun, PumpSwap, BonkFun, and Raydium with lightning-fast execution.**
+
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
 [![Solana](https://img.shields.io/badge/Solana-1.17+-blue.svg)](https://solana.com/)
 [![Telegram](https://img.shields.io/badge/Telegram-Bot-orange.svg)](https://telegram.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> **Advanced Solana copy trading bot with MEV capabilities, sniper trading, and offchain transaction signing for maximum speed and efficiency.**
+## 📋 Table of Contents
+- [Features](#-features)
+- [Architecture](#️-architecture)
+- [Quick Start](#-quick-start)
+- [Telegram Commands](#-telegram-commands)
+- [Advanced Configuration](#️-advanced-configuration)
+- [Technical Details](#-technical-details)
+- [Performance Monitoring](#-performance-monitoring)
+- [Security Features](#️-security-features)
+- [Supported DEX Platforms](#-supported-dex-platforms)
+- [Trading Strategies](#-trading-strategies)
+- [Troubleshooting](#️-troubleshooting)
+- [Support](#-support)
 
 ## 🌟 Features
 
-### 🎯 **Core Trading Capabilities**
-- **Copy Trading**: Automatically replicate successful trades from target wallets
-- **Sniper Trading**: Lightning-fast token launch detection and execution
-- **MEV Bot**: Capture arbitrage opportunities and front-run transactions
-- **Multi-DEX Support**: Trade on PumpFun, PumpSwap, BonkFun, and Raydium
-- **Real-time Monitoring**: 24/7 blockchain transaction monitoring
+### 🎯 **Core Solana Copy Trading Bot Capabilities**
+- **Advanced Copy Trading**: Automatically replicate successful trades from target wallets on Solana
+- **Sniper Trading**: Lightning-fast token launch detection and execution for Solana tokens
+- **MEV Bot Integration**: Capture arbitrage opportunities and front-run transactions on Solana
+- **Multi-DEX Support**: Trade on PumpFun, PumpSwap, BonkFun, and Raydium DEXs
+- **Real-time Monitoring**: 24/7 Solana blockchain transaction monitoring
 
-### ⚡ **High-Speed Transaction Execution**
-- **0slot Integration**: Zero-slot transaction execution for maximum speed
-- **Nozomi Support**: Advanced transaction routing and optimization
-- **Offchain Signing**: Pre-built transaction signing for reduced latency
-- **gRPC Communication**: High-performance communication with 0block
-- **Shred Stream Processing**: Real-time blockchain data processing
+### ⚡ **High-Speed Solana Transaction Execution**
+- **0slot Integration**: Zero-slot transaction execution for maximum Solana trading speed
+- **Nozomi Support**: Advanced Solana transaction routing and optimization
+- **Offchain Signing**: Pre-built Solana transaction signing for reduced latency
+- **gRPC Communication**: High-performance communication with 0block for Solana
+- **Shred Stream Processing**: Real-time Solana blockchain data processing
 
-### 🔧 **Advanced Technical Features**
+### 🔧 **Advanced Solana Copy Trading Bot Features**
 - **Multi-Method Swapping**: Support for Solana, JITO, Nozomi, 0slot, and Race methods
-- **Custom Sell Logic**: Advanced exit strategies with stop-loss and take-profit
-- **Risk Management**: Comprehensive risk controls and position sizing
-- **Performance Tracking**: Real-time PnL monitoring and statistics
-- **Error Recovery**: Robust error handling and automatic retry mechanisms
+- **Custom Sell Logic**: Advanced exit strategies with stop-loss and take-profit for Solana trades
+- **Risk Management**: Comprehensive risk controls and position sizing for Solana trading
+- **Performance Tracking**: Real-time PnL monitoring and statistics for Solana copy trading
+- **Error Recovery**: Robust error handling and automatic retry mechanisms for Solana transactions
 
-### 📱 **Telegram Interface**
-- **Remote Control**: Complete bot control via Telegram commands
-- **Real-time Alerts**: Instant notifications for trades, errors, and balance updates
-- **Interactive Dashboard**: Live status monitoring and configuration
-- **Customizable Alerts**: Configurable notification preferences
-- **Balance Monitoring**: Automatic wallet balance tracking
+### 📱 **Telegram Interface for Solana Copy Trading Bot**
+- **Remote Control**: Complete Solana copy trading bot control via Telegram commands
+- **Real-time Alerts**: Instant notifications for Solana trades, errors, and balance updates
+- **Interactive Dashboard**: Live status monitoring and configuration for Solana copy trading
+- **Customizable Alerts**: Configurable notification preferences for Solana trading bot
+- **Balance Monitoring**: Automatic Solana wallet balance tracking
 
 ## 🏗️ Architecture
 
-### **System Architecture Overview**
+### **Solana Copy Trading Bot System Architecture Overview**
 
 ```mermaid
 graph TB
@@ -114,73 +128,73 @@ graph TB
     O --> U
 ```
 
-### **Transaction Flow Diagram**
+### **Solana Copy Trading Bot Transaction Flow Diagram**
 
 ```mermaid
 flowchart TD
-    Start([🚀 Start Bot]) --> Init[Initialize Components]
+    Start([🚀 Start Solana Copy Trading Bot]) --> Init[Initialize Components]
     Init --> Config[Load Configuration]
-    Config --> CheckBalance{Check Wallet Balance}
+    Config --> CheckBalance{Check Solana Wallet Balance}
     
-    CheckBalance -->|Sufficient| StartMonitoring[Start Transaction Monitoring]
+    CheckBalance -->|Sufficient| StartMonitoring[Start Solana Transaction Monitoring]
     CheckBalance -->|Insufficient| AlertLowBalance[Send Low Balance Alert]
-    AlertLowBalance --> StopBot[Stop Bot]
+    AlertLowBalance --> StopBot[Stop Solana Copy Trading Bot]
     
-    StartMonitoring --> MonitorTx[Monitor Blockchain Transactions]
-    MonitorTx --> ParseTx[Parse Transaction Data]
+    StartMonitoring --> MonitorTx[Monitor Solana Blockchain Transactions]
+    MonitorTx --> ParseTx[Parse Solana Transaction Data]
     
-    ParseTx --> Strategy{Determine Strategy Type}
+    ParseTx --> Strategy{Determine Solana Trading Strategy Type}
     
-    Strategy -->|Copy Trading| CopyLogic[Copy Trading Logic]
-    Strategy -->|Sniper Trading| SniperLogic[Sniper Trading Logic]
-    Strategy -->|MEV Opportunity| MEVLogic[MEV Bot Logic]
+    Strategy -->|Copy Trading| CopyLogic[Solana Copy Trading Logic]
+    Strategy -->|Sniper Trading| SniperLogic[Solana Sniper Trading Logic]
+    Strategy -->|MEV Opportunity| MEVLogic[Solana MEV Bot Logic]
     
-    CopyLogic --> ValidateCopy{Validate Copy Trade}
-    SniperLogic --> ValidateSniper{Validate Sniper Trade}
-    MEVLogic --> ValidateMEV{Validate MEV Trade}
+    CopyLogic --> ValidateCopy{Validate Solana Copy Trade}
+    SniperLogic --> ValidateSniper{Validate Solana Sniper Trade}
+    MEVLogic --> ValidateMEV{Validate Solana MEV Trade}
     
-    ValidateCopy -->|Valid| ExecuteCopy[Execute Copy Trade]
-    ValidateSniper -->|Valid| ExecuteSniper[Execute Sniper Trade]
-    ValidateMEV -->|Valid| ExecuteMEV[Execute MEV Trade]
+    ValidateCopy -->|Valid| ExecuteCopy[Execute Solana Copy Trade]
+    ValidateSniper -->|Valid| ExecuteSniper[Execute Solana Sniper Trade]
+    ValidateMEV -->|Valid| ExecuteMEV[Execute Solana MEV Trade]
     
-    ValidateCopy -->|Invalid| SkipCopy[Skip Trade]
-    ValidateSniper -->|Invalid| SkipSniper[Skip Trade]
-    ValidateMEV -->|Invalid| SkipMEV[Skip Trade]
+    ValidateCopy -->|Invalid| SkipCopy[Skip Solana Trade]
+    ValidateSniper -->|Invalid| SkipSniper[Skip Solana Trade]
+    ValidateMEV -->|Invalid| SkipMEV[Skip Solana Trade]
     
-    ExecuteCopy --> SwapEngine[Swap Execution Engine]
+    ExecuteCopy --> SwapEngine[Solana Swap Execution Engine]
     ExecuteSniper --> SwapEngine
     ExecuteMEV --> SwapEngine
     
-    SwapEngine --> SwapMethod{Select Swap Method}
+    SwapEngine --> SwapMethod{Select Solana Swap Method}
     
     SwapMethod -->|Solana| StandardSwap[Standard Solana Swap]
-    SwapMethod -->|JITO| JitoSwap[JITO Swap]
-    SwapMethod -->|Nozomi| NozomiSwap[Nozomi Swap]
-    SwapMethod -->|0slot| ZeroSlotSwap[0slot Swap]
-    SwapMethod -->|Race| RaceSwap[Race Swap]
+    SwapMethod -->|JITO| JitoSwap[JITO Solana Swap]
+    SwapMethod -->|Nozomi| NozomiSwap[Nozomi Solana Swap]
+    SwapMethod -->|0slot| ZeroSlotSwap[0slot Solana Swap]
+    SwapMethod -->|Race| RaceSwap[Race Solana Swap]
     
-    StandardSwap --> ExecuteTransaction[Execute Transaction]
+    StandardSwap --> ExecuteTransaction[Execute Solana Transaction]
     JitoSwap --> ExecuteTransaction
     NozomiSwap --> ExecuteTransaction
     ZeroSlotSwap --> ExecuteTransaction
     RaceSwap --> ExecuteTransaction
     
-    ExecuteTransaction --> Success{Transaction Success?}
+    ExecuteTransaction --> Success{Solana Transaction Success?}
     
-    Success -->|Yes| UpdatePosition[Update Position Tracking]
+    Success -->|Yes| UpdatePosition[Update Solana Position Tracking]
     Success -->|No| RetryLogic{Retry Count < Max?}
     
-    RetryLogic -->|Yes| RetryDelay[Wait & Retry]
+    RetryLogic -->|Yes| RetryDelay[Wait & Retry Solana Transaction]
     RetryLogic -->|No| LogError[Log Error & Alert]
     
     RetryDelay --> ExecuteTransaction
     LogError --> MonitorTx
     
-    UpdatePosition --> SellLogic[Apply Custom Sell Logic]
-    SellLogic --> ShouldSell{Should Sell?}
+    UpdatePosition --> SellLogic[Apply Custom Solana Sell Logic]
+    SellLogic --> ShouldSell{Should Sell Solana Position?}
     
-    ShouldSell -->|Yes| ExecuteSell[Execute Sell Trade]
-    ShouldSell -->|No| ContinueMonitoring[Continue Monitoring]
+    ShouldSell -->|Yes| ExecuteSell[Execute Solana Sell Trade]
+    ShouldSell -->|No| ContinueMonitoring[Continue Solana Monitoring]
     
     ExecuteSell --> SwapEngine
     ContinueMonitoring --> MonitorTx
@@ -190,28 +204,28 @@ flowchart TD
     SkipMEV --> MonitorTx
 ```
 
-### **Data Flow Architecture**
+### **Solana Copy Trading Bot Data Flow Architecture**
 
 ```mermaid
 graph LR
     subgraph "Input Sources"
-        A[Blockchain Transactions]
+        A[Solana Blockchain Transactions]
         B[Telegram Commands]
         C[Configuration Files]
     end
     
     subgraph "Processing Layer"
-        D[Transaction Parser]
-        E[Strategy Engine]
-        F[Risk Manager]
-        G[Swap Engine]
+        D[Solana Transaction Parser]
+        E[Solana Strategy Engine]
+        F[Solana Risk Manager]
+        G[Solana Swap Engine]
     end
     
     subgraph "Output Layer"
         H[Telegram Alerts]
-        I[Transaction Logs]
-        J[Performance Metrics]
-        K[Position Tracking]
+        I[Solana Transaction Logs]
+        J[Solana Performance Metrics]
+        K[Solana Position Tracking]
     end
     
     A --> D
@@ -230,166 +244,166 @@ graph LR
 
 ## 🚀 Quick Start
 
-### **Prerequisites**
+### **Prerequisites for Solana Copy Trading Bot**
 - Node.js 18+ 
 - Solana CLI tools
 - Telegram Bot Token
 - Solana wallet with SOL balance
 
-### **Installation**
+### **Installation of Solana Copy Trading Bot**
 
 ```bash
-# Clone the repository
+# Clone the Solana copy trading bot repository
 git clone https://github.com/hanshaze/solana-copy-trading-bot.git
 cd solana-copy-trading-bot
 
-# Install dependencies
+# Install dependencies for Solana copy trading bot
 npm install
 
-# Copy environment template
+# Copy environment template for Solana copy trading bot
 cp .env.example .env
 
-# Configure your environment variables
+# Configure your Solana copy trading bot environment variables
 nano .env
 ```
 
-### **Environment Configuration**
+### **Solana Copy Trading Bot Environment Configuration**
 
 ```env
-# Solana Configuration
+# Solana Configuration for Copy Trading Bot
 RPC_URL=https://api.mainnet-beta.solana.com
 PRIVATE_KEY=your_private_key_here
 
-# Telegram Configuration
+# Telegram Configuration for Solana Copy Trading Bot
 TELEGRAM_BOT_TOKEN=your_bot_token
 TELEGRAM_CHAT_ID=your_chat_id
 
-# Trading Configuration
+# Solana Copy Trading Bot Configuration
 SWAP_METHOD=nozomi  # Options: solana, jito, nozomi, 0slot, race
 SLIPPAGE_BPS=50
 MAX_RETRIES=3
 RETRY_DELAY=1000
 
-# Balance Limits
+# Solana Copy Trading Bot Balance Limits
 LIMIT_BALANCE=0.1
 
-# Nozomi Configuration (if using Nozomi)
+# Nozomi Configuration for Solana Copy Trading Bot (if using Nozomi)
 NOZOMI_URL=your_nozomi_url
 NOZOMI_UUID=your_nozomi_uuid
 NOZOMI_TIP_LAMPORTS=200000
 
-# JITO Configuration (if using JITO)
+# JITO Configuration for Solana Copy Trading Bot (if using JITO)
 JITO_TIP=100000
 PRIORITIZATION_FEE_LAMPORTS=10000
 ```
 
-### **Running the Bot**
+### **Running the Solana Copy Trading Bot**
 
 ```bash
-# Start the bot
+# Start the Solana copy trading bot
 npm start
 
-# Or run directly with Node.js
+# Or run Solana copy trading bot directly with Node.js
 node index.js
 ```
 
-## 📱 Telegram Commands
+## 📱 Telegram Commands for Solana Copy Trading Bot
 
-### **Main Commands**
-- `/start` - Show main control panel
-- `/status` - Check bot status and balance
-- `/balance` - Check wallet balance
-- `/alerts` - Manage alert settings
-- `/stats` - View trading statistics
-- `/help` - Show all commands
+### **Main Commands for Solana Copy Trading Bot**
+- `/start` - Show main control panel for Solana copy trading bot
+- `/status` - Check Solana copy trading bot status and balance
+- `/balance` - Check Solana wallet balance
+- `/alerts` - Manage alert settings for Solana copy trading bot
+- `/stats` - View Solana copy trading bot trading statistics
+- `/help` - Show all Solana copy trading bot commands
 
-### **Interactive Controls**
-- **Start Bot** - Begin trading operations
-- **Stop Bot** - Halt all trading activities
-- **Refresh** - Update status and balance
-- **Settings** - Configure bot parameters
+### **Interactive Controls for Solana Copy Trading Bot**
+- **Start Bot** - Begin Solana copy trading operations
+- **Stop Bot** - Halt all Solana copy trading activities
+- **Refresh** - Update Solana copy trading bot status and balance
+- **Settings** - Configure Solana copy trading bot parameters
 
-## ⚙️ Advanced Configuration
+## ⚙️ Advanced Configuration for Solana Copy Trading Bot
 
-### **Swap Methods**
+### **Solana Copy Trading Bot Swap Methods**
 
 #### **Standard Solana**
 ```javascript
 SWAP_METHOD=solana
 ```
-Standard Solana transaction execution with basic prioritization fees.
+Standard Solana transaction execution with basic prioritization fees for copy trading.
 
-#### **JITO Integration**
+#### **JITO Integration for Solana Copy Trading Bot**
 ```javascript
 SWAP_METHOD=jito
 JITO_TIP=100000
 ```
-JITO MEV-boost integration for enhanced transaction routing.
+JITO MEV-boost integration for enhanced Solana transaction routing in copy trading.
 
-#### **Nozomi Integration**
+#### **Nozomi Integration for Solana Copy Trading Bot**
 ```javascript
 SWAP_METHOD=nozomi
 NOZOMI_URL=your_nozomi_endpoint
 NOZOMI_UUID=your_uuid
 NOZOMI_TIP_LAMPORTS=200000
 ```
-Nozomi integration for advanced transaction optimization and routing.
+Nozomi integration for advanced Solana transaction optimization and routing in copy trading.
 
-#### **0slot Integration**
+#### **0slot Integration for Solana Copy Trading Bot**
 ```javascript
 SWAP_METHOD=0slot
 ```
-Zero-slot transaction execution for maximum speed and efficiency.
+Zero-slot Solana transaction execution for maximum speed and efficiency in copy trading.
 
-#### **Race Method**
+#### **Race Method for Solana Copy Trading Bot**
 ```javascript
 SWAP_METHOD=race
 ```
-Race-based transaction execution for competitive trading environments.
+Race-based Solana transaction execution for competitive copy trading environments.
 
-### **Custom Sell Logic**
+### **Custom Sell Logic for Solana Copy Trading Bot**
 
-The bot implements advanced sell logic with multiple exit strategies:
+The Solana copy trading bot implements advanced sell logic with multiple exit strategies:
 
 ```javascript
-// Example sell logic configuration
+// Example sell logic configuration for Solana copy trading bot
 const sellLogic = {
-  stopLoss: 0.1,        // 10% stop loss
-  takeProfit: 0.5,      // 50% take profit
-  trailingStop: 0.05,   // 5% trailing stop
-  timeBasedExit: 3600,  // Exit after 1 hour
-  customRules: []       // Custom exit conditions
+  stopLoss: 0.1,        // 10% stop loss for Solana trades
+  takeProfit: 0.5,      // 50% take profit for Solana trades
+  trailingStop: 0.05,   // 5% trailing stop for Solana trades
+  timeBasedExit: 3600,  // Exit Solana position after 1 hour
+  customRules: []       // Custom exit conditions for Solana copy trading
 };
 ```
 
-### **Risk Management**
+### **Risk Management for Solana Copy Trading Bot**
 
 ```javascript
-// Risk management parameters
+// Risk management parameters for Solana copy trading bot
 const riskConfig = {
-  maxPositionSize: 0.1,     // Maximum 10% of balance per trade
-  maxDailyLoss: 0.2,        // Maximum 20% daily loss
-  minBalance: 0.1,          // Minimum balance threshold
-  maxRetries: 3,            // Maximum transaction retries
-  retryDelay: 1000          // Retry delay in milliseconds
+  maxPositionSize: 0.1,     // Maximum 10% of balance per Solana trade
+  maxDailyLoss: 0.2,        // Maximum 20% daily loss for Solana copy trading
+  minBalance: 0.1,          // Minimum Solana balance threshold
+  maxRetries: 3,            // Maximum Solana transaction retries
+  retryDelay: 1000          // Retry delay in milliseconds for Solana copy trading
 };
 ```
 
-## 🔧 Technical Details
+## 🔧 Technical Details for Solana Copy Trading Bot
 
-### **Transaction Parsing**
+### **Solana Copy Trading Bot Transaction Parsing**
 
-The bot supports advanced transaction parsing for multiple DEX platforms:
+The Solana copy trading bot supports advanced transaction parsing for multiple DEX platforms:
 
-- **PumpFun**: 233-byte transaction format
-- **PumpSwap**: 368-byte transaction format  
-- **Raydium LaunchLab**: 146-byte transaction format
-- **Raydium**: Standard Raydium transaction format
+- **PumpFun**: 233-byte Solana transaction format
+- **PumpSwap**: 368-byte Solana transaction format  
+- **Raydium LaunchLab**: 146-byte Solana transaction format
+- **Raydium**: Standard Raydium Solana transaction format
 
-### **Offchain Transaction Signing**
+### **Offchain Transaction Signing for Solana Copy Trading Bot**
 
 ```javascript
-// Offchain transaction signing example
+// Offchain Solana transaction signing example for copy trading bot
 import { offchainSwap } from './swap(offchain).js';
 
 const swapResult = await offchainSwap({
@@ -400,158 +414,157 @@ const swapResult = await offchainSwap({
 });
 ```
 
-### **gRPC Integration**
+### **gRPC Integration for Solana Copy Trading Bot**
 
-The bot uses gRPC for high-performance communication with 0block:
+The Solana copy trading bot uses gRPC for high-performance communication with 0block:
 
 ```javascript
-// gRPC client configuration
+// gRPC client configuration for Solana copy trading bot
 const grpcClient = new GrpcClient({
   endpoint: 'your_0block_endpoint',
   credentials: 'your_credentials'
 });
 ```
 
-### **Shred Stream Processing**
+### **Shred Stream Processing for Solana Copy Trading Bot**
 
-Real-time blockchain data processing using shred streams:
+Real-time Solana blockchain data processing using shred streams:
 
 ```javascript
-// Shred stream processing
+// Shred stream processing for Solana copy trading bot
 const shredStream = new ShredStream({
   endpoint: 'your_shred_endpoint',
   onData: (shred) => {
-    // Process shred data
+    // Process Solana shred data for copy trading
     processShredData(shred);
   }
 });
 ```
 
-## 📊 Performance Monitoring
+## 📊 Performance Monitoring for Solana Copy Trading Bot
 
-### **Real-time Metrics**
-- **Transaction Success Rate**: Track successful vs failed transactions
-- **Average Execution Time**: Monitor transaction speed
-- **PnL Tracking**: Real-time profit/loss monitoring
-- **Position Tracking**: Active position management
-- **Balance Monitoring**: Wallet balance tracking
+### **Real-time Metrics for Solana Copy Trading Bot**
+- **Transaction Success Rate**: Track successful vs failed Solana transactions
+- **Average Execution Time**: Monitor Solana transaction speed
+- **PnL Tracking**: Real-time profit/loss monitoring for Solana copy trading
+- **Position Tracking**: Active Solana position management
+- **Balance Monitoring**: Solana wallet balance tracking
 
-### **Alert System**
-- **Buy Alerts**: Notifications for successful purchases
-- **Sell Alerts**: Notifications for position exits
-- **Error Alerts**: System error notifications
-- **Balance Alerts**: Low balance warnings
-- **Performance Alerts**: Performance threshold notifications
+### **Alert System for Solana Copy Trading Bot**
+- **Buy Alerts**: Notifications for successful Solana purchases
+- **Sell Alerts**: Notifications for Solana position exits
+- **Error Alerts**: System error notifications for Solana copy trading bot
+- **Balance Alerts**: Low Solana balance warnings
+- **Performance Alerts**: Performance threshold notifications for Solana copy trading
 
-## 🛡️ Security Features
+## 🛡️ Security Features for Solana Copy Trading Bot
 
-### **Wallet Security**
-- **Private Key Management**: Secure private key handling
-- **Balance Validation**: Pre-trade balance verification
-- **Transaction Validation**: Post-trade confirmation
-- **Error Recovery**: Automatic error handling and recovery
+### **Solana Wallet Security**
+- **Private Key Management**: Secure private key handling for Solana copy trading bot
+- **Balance Validation**: Pre-trade Solana balance verification
+- **Transaction Validation**: Post-trade Solana confirmation
+- **Error Recovery**: Automatic error handling and recovery for Solana copy trading
 
-### **Risk Controls**
-- **Position Sizing**: Automatic position size calculation
-- **Stop Loss**: Configurable stop-loss mechanisms
-- **Take Profit**: Automated take-profit execution
-- **Daily Limits**: Daily loss and trade limits
+### **Risk Controls for Solana Copy Trading Bot**
+- **Position Sizing**: Automatic Solana position size calculation
+- **Stop Loss**: Configurable stop-loss mechanisms for Solana trades
+- **Take Profit**: Automated take-profit execution for Solana positions
+- **Daily Limits**: Daily loss and trade limits for Solana copy trading
 
-## 🔄 Supported DEX Platforms
+## 🔄 Supported DEX Platforms for Solana Copy Trading Bot
 
 ### **PumpFun**
-- **Transaction Format**: 233 bytes
-- **Features**: Virtual AMM, creator fees
-- **Integration**: Full transaction parsing and execution
+- **Transaction Format**: 233 bytes for Solana copy trading
+- **Features**: Virtual AMM, creator fees for Solana copy trading bot
+- **Integration**: Full Solana transaction parsing and execution
 
 ### **PumpSwap**
-- **Transaction Format**: 368 bytes
-- **Features**: LP fees, protocol fees
-- **Integration**: Complete swap execution support
+- **Transaction Format**: 368 bytes for Solana copy trading
+- **Features**: LP fees, protocol fees for Solana copy trading bot
+- **Integration**: Complete Solana swap execution support
 
 ### **BonkFun**
-- **Features**: Meme token trading
-- **Integration**: Standard Solana swap execution
+- **Features**: Meme token trading on Solana
+- **Integration**: Standard Solana swap execution for copy trading
 
 ### **Raydium**
-- **Features**: AMM trading, liquidity pools
-- **Integration**: Full Raydium protocol support
+- **Features**: AMM trading, liquidity pools on Solana
+- **Integration**: Full Raydium protocol support for Solana copy trading
 
-## 📈 Trading Strategies
+## 📈 Trading Strategies for Solana Copy Trading Bot
 
-### **Copy Trading**
-1. **Target Selection**: Choose successful wallets to copy
-2. **Transaction Monitoring**: Real-time transaction tracking
-3. **Strategy Analysis**: Analyze trading patterns
-4. **Execution**: Replicate successful trades
-5. **Position Management**: Apply custom sell logic
+### **Solana Copy Trading Strategy**
+1. **Target Selection**: Choose successful Solana wallets to copy
+2. **Transaction Monitoring**: Real-time Solana transaction tracking
+3. **Strategy Analysis**: Analyze Solana trading patterns
+4. **Execution**: Replicate successful Solana trades
+5. **Position Management**: Apply custom sell logic for Solana copy trading
 
-### **Sniper Trading**
-1. **Launch Detection**: Monitor new token launches
-2. **Analysis**: Evaluate launch parameters
-3. **Execution**: Fast token purchase execution
-4. **Position Tracking**: Monitor position performance
-5. **Exit Strategy**: Apply sniper-specific sell logic
+### **Solana Sniper Trading Strategy**
+1. **Launch Detection**: Monitor new Solana token launches
+2. **Analysis**: Evaluate Solana launch parameters
+3. **Execution**: Fast Solana token purchase execution
+4. **Position Tracking**: Monitor Solana position performance
+5. **Exit Strategy**: Apply sniper-specific sell logic for Solana copy trading
 
-### **MEV Bot**
-1. **Opportunity Detection**: Monitor mempool for arbitrage
-2. **Profit Calculation**: Calculate potential MEV profit
-3. **Execution**: Execute MEV transactions
-4. **Position Management**: Manage MEV positions
-5. **Exit Strategy**: Optimize MEV exit timing
+### **Solana MEV Bot Strategy**
+1. **Opportunity Detection**: Monitor Solana mempool for arbitrage
+2. **Profit Calculation**: Calculate potential MEV profit on Solana
+3. **Execution**: Execute MEV transactions on Solana
+4. **Position Management**: Manage MEV positions on Solana
+5. **Exit Strategy**: Optimize MEV exit timing for Solana copy trading
 
-## 🚨 Troubleshooting
+## 🚨 Troubleshooting for Solana Copy Trading Bot
 
-### **Common Issues**
+### **Common Issues with Solana Copy Trading Bot**
 
-#### **Insufficient Balance**
+#### **Insufficient Solana Balance**
 ```
-Error: Insufficient balance for trading
-Solution: Add SOL to your wallet
-```
-
-#### **Transaction Failures**
-```
-Error: Transaction failed after retries
-Solution: Check RPC endpoint and network connectivity
+Error: Insufficient balance for Solana copy trading
+Solution: Add SOL to your Solana wallet
 ```
 
-#### **Telegram Bot Issues**
+#### **Solana Transaction Failures**
 ```
-Error: Telegram bot not responding
+Error: Solana transaction failed after retries
+Solution: Check RPC endpoint and Solana network connectivity
+```
+
+#### **Telegram Bot Issues for Solana Copy Trading Bot**
+```
+Error: Telegram bot not responding for Solana copy trading bot
 Solution: Verify bot token and chat ID configuration
 ```
 
-### **Performance Optimization**
+### **Performance Optimization for Solana Copy Trading Bot**
 
-#### **High Latency**
-- Use dedicated RPC endpoints
-- Enable Nozomi or 0slot integration
-- Optimize network configuration
+#### **High Latency in Solana Copy Trading**
+- Use dedicated Solana RPC endpoints
+- Enable Nozomi or 0slot integration for Solana copy trading
+- Optimize network configuration for Solana copy trading bot
 
-#### **Transaction Failures**
-- Increase prioritization fees
-- Use alternative swap methods
-- Check wallet balance
+#### **Solana Transaction Failures**
+- Increase prioritization fees for Solana copy trading
+- Use alternative swap methods for Solana copy trading
+- Check Solana wallet balance
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This Solana copy trading bot project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🤝 Contributing
+## 🤝 Contributing to Solana Copy Trading Bot
 
-1. Fork the repository
+1. Fork the Solana copy trading bot repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+5. Open a Pull Request for the Solana copy trading bot
 
 ## ⚠️ Disclaimer
 
-This software is for educational and research purposes only. Trading cryptocurrencies involves significant risk and may result in the loss of your capital. You should carefully consider whether trading is suitable for you in light of your financial condition. The authors are not responsible for any losses incurred through the use of this software.
+This Solana copy trading bot software is for educational and research purposes only. Trading cryptocurrencies on Solana involves significant risk and may result in the loss of your capital. You should carefully consider whether Solana copy trading is suitable for you in light of your financial condition. The authors are not responsible for any losses incurred through the use of this Solana copy trading bot software.
 
-
-## 📞 Support
+## 📞 Support for Solana Copy Trading Bot
 
 - **Telegram**: [@hanshazee](https://t.me/hanshazee)
 - **Email**: hicrs423@gmail.com
@@ -560,6 +573,6 @@ This software is for educational and research purposes only. Trading cryptocurre
 
 ---
 
-**⭐ Star this repository if you find it helpful!**
+**⭐ Star this Solana copy trading bot repository if you find it helpful!**
 
-**�� Happy Trading!** 
+**😊 Happy Solana Copy Trading!** 
