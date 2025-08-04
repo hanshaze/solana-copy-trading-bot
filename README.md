@@ -23,12 +23,12 @@
 
 ## 🌟 Features
 
-### 🎯 **Core Solana Copy Trading Bot Capabilities**
-- **Advanced Copy Trading**: Automatically replicate successful trades from target wallets on Solana
-- **Sniper Trading**: Lightning-fast token launch detection and execution for Solana tokens
-- **MEV Bot Integration**: Capture arbitrage opportunities and front-run transactions on Solana
-- **Multi-DEX Support**: Trade on PumpFun, PumpSwap, BonkFun, and Raydium DEXs
-- **Real-time Monitoring**: 24/7 Solana blockchain transaction monitoring
+### 🎯 **Core Trading Capabilities**
+- **Copy Trading**: Automatically replicate successful trades from target wallets
+- **Sniper Trading**: Lightning-fast token launch detection and execution
+- **MEV Bot**: Capture arbitrage opportunities and front-run transactions
+- **Multi-DEX Support**: Trade on PumpFun, PumpSwap, BonkFun, and Raydium
+- **Real-time Monitoring**: 24/7 blockchain transaction monitoring
 
 ### ⚡ **High-Speed Solana Transaction Execution**
 - **0slot Integration**: Zero-slot transaction execution for maximum Solana trading speed
@@ -51,7 +51,7 @@
 - **Customizable Alerts**: Configurable notification preferences for Solana trading bot
 - **Balance Monitoring**: Automatic Solana wallet balance tracking
 
-## 🏗️ Architecture
+## 🏗️ Solana Copy Trading Bot Architecture
 
 ### **Solana Copy Trading Bot System Architecture Overview**
 
@@ -242,7 +242,7 @@ graph LR
     G --> K
 ```
 
-## 🚀 Quick Start
+## 🚀Solana Copy Trading Bot Quick Start
 
 ### **Prerequisites for Solana Copy Trading Bot**
 - Node.js 18+ 
@@ -323,7 +323,7 @@ node index.js
 - **Refresh** - Update Solana copy trading bot status and balance
 - **Settings** - Configure Solana copy trading bot parameters
 
-## ⚙️ Advanced Configuration for Solana Copy Trading Bot
+## ⚙️ Advanced Configuration
 
 ### **Solana Copy Trading Bot Swap Methods**
 
@@ -389,7 +389,7 @@ const riskConfig = {
 };
 ```
 
-## 🔧 Technical Details for Solana Copy Trading Bot
+## 🔧 Technical Details
 
 ### **Solana Copy Trading Bot Transaction Parsing**
 
@@ -457,7 +457,7 @@ const shredStream = new ShredStream({
 - **Balance Alerts**: Low Solana balance warnings
 - **Performance Alerts**: Performance threshold notifications for Solana copy trading
 
-## 🛡️ Security Features for Solana Copy Trading Bot
+## 🛡️ Security Features
 
 ### **Solana Wallet Security**
 - **Private Key Management**: Secure private key handling for Solana copy trading bot
@@ -514,7 +514,7 @@ const shredStream = new ShredStream({
 4. **Position Management**: Manage MEV positions on Solana
 5. **Exit Strategy**: Optimize MEV exit timing for Solana copy trading
 
-## 🚨 Troubleshooting for Solana Copy Trading Bot
+## 🚨 Troubleshooting
 
 ### **Common Issues with Solana Copy Trading Bot**
 
@@ -548,11 +548,11 @@ Solution: Verify bot token and chat ID configuration
 - Use alternative swap methods for Solana copy trading
 - Check Solana wallet balance
 
-## 📝 License
+## 📝Solana Copy Trading Bot License
 
 This Solana copy trading bot project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🤝 Contributing to Solana Copy Trading Bot
+## 🤝 Contributing
 
 1. Fork the Solana copy trading bot repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -560,11 +560,12 @@ This Solana copy trading bot project is licensed under the MIT License - see the
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request for the Solana copy trading bot
 
-## ⚠️ Disclaimer
+## ⚠️Solana Copy Trading Bot Disclaimer
 
 This Solana copy trading bot software is for educational and research purposes only. Trading cryptocurrencies on Solana involves significant risk and may result in the loss of your capital. You should carefully consider whether Solana copy trading is suitable for you in light of your financial condition. The authors are not responsible for any losses incurred through the use of this Solana copy trading bot software.
 
-## 📞 Support for Solana Copy Trading Bot
+
+## 📞 Support
 
 - **Telegram**: [@hanshazee](https://t.me/hanshazee)
 - **Email**: hicrs423@gmail.com
@@ -575,4 +576,4 @@ This Solana copy trading bot software is for educational and research purposes o
 
 **⭐ Star this Solana copy trading bot repository if you find it helpful!**
 
-**😊 Happy Solana Copy Trading!** 
+**�� Happy Trading!** 
