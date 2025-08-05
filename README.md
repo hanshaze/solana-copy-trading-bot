@@ -1,4 +1,4 @@
-# 🚀 Solana Copy Trading Bot - Advanced MEV & Sniper Trading System
+# 🚀 Solana Copy Trading Bot - Advanced MEV & Sniper pump bonk 0~1 block
 
 > **The most advanced Solana copy trading bot with MEV capabilities, sniper trading, and offchain transaction signing for maximum speed and efficiency. Trade on PumpFun, PumpSwap, BonkFun, and Raydium with lightning-fast execution.**
 
