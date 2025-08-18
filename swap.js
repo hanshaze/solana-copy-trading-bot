@@ -9,8 +9,7 @@ import fs from "fs";
 import path from "path";
 import bs58 from "bs58";
 import { getSplTokenBalance } from "./fuc.js";
-import { decodedPrivateKey } from "./index.js";
-import { logToFile } from "./logger.js";
+
 dotenv.config();
 
 // SWAP_METHOD: "0slot", "nozomi", "race", "solana"
@@ -49,7 +48,7 @@ export const decodePrivateKey = (secretKeyString) =>{
 }
 
 export const loadwallet = async () => {
-  const privateKey = decodedPrivateKey;
+  const privateKey = process.env.PRIVATE_KEY;
   if (!privateKey) {
     throw new Error("PRIVATE_KEY not found in environment variables");
   }
@@ -74,10 +73,55 @@ export const rpc_connection = () => {
   return new Connection(process.env.RPC_URL, "confirmed");
 };
 
+export const getBalance = async () => {
+  const connection = rpc_connection();
+  const walletInstance = await loadwallet();
+  const balance = await connection.getBalance(walletInstance.publicKey);
+ 
+  console.log(`Balance =>`, balance / LAMPORTS_PER_SOL, "SOL");
+  return balance / LAMPORTS_PER_SOL;
+};
+
+// const quoteResponse = await (
+//   await fetch(
+//       `https://lite-api.jup.ag/swap/v1/quote?inputMint=So11111111111111111111111111111111111111112&outputMint=${this.mint.toString()}&amount=${this.buy_amount}&slippageBps=4000&restrictIntermediateTokens=true`
+//   )
+// ).json();
+// const swapResponse = await (
+//   await fetch('https://lite-api.jup.ag/swap/v1/swap', {
+//       method: 'POST',
+//       headers: {
+//       'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify({
+//           quoteResponse,
+//           userPublicKey: wallet.publicKey,
+//           dynamicComputeUnitLimit: true,
+//           dynamicSlippage: true,
+//           prioritizationFeeLamports: {
+//               priorityLevelWithMaxLamports: {
+//                   maxLamports: 4000,
+//                   priorityLevel: "high"
+//               }
+//           }
+//       })
+//   })
+// ).json();
+// const transactionBase64 = swapResponse.swapTransaction
+// const transaction = VersionedTransaction.deserialize(Buffer.from(transactionBase64, 'base64'));
+// transaction.sign([wallet]);
+// await sendAndConfirmRawTransaction(
+//   this.instantConnection,
+//   Buffer.from(transaction.serialize()),
+//   { skipPreflight: true, maxRetries: 5 }
+// )
+
+
+
 const getResponse = async (tokenA, tokenB, amount, slippageBps, anchorWallet) => {
   const quoteResponse = (
     await axios.get(
-      `https://quote-api.jup.ag/v6/quote?inputMint=${tokenA}&outputMint=${tokenB}&amount=${amount}&slippageBps=${slippageBps}`
+      `https://lite-api.jup.ag/swap/v1/quote?inputMint=${tokenA}&outputMint=${tokenB}&amount=${amount}&slippageBps=${slippageBps}`
     )
   ).data;
 
@@ -87,6 +131,7 @@ const getResponse = async (tokenA, tokenB, amount, slippageBps, anchorWallet) =>
     userPublicKey: anchorWallet.publicKey.toString(),
     wrapAndUnwrapSol: true,
     dynamicComputeUnitLimit: true,
+   
   };
 
   // Map SWAP_METHOD string to behavior
@@ -99,8 +144,8 @@ const getResponse = async (tokenA, tokenB, amount, slippageBps, anchorWallet) =>
   }
   // "nozomi" handled in executeTransaction
 
-  const swapResponse = await axios.post(`https://quote-api.jup.ag/v6/swap`, swapRequestBody);
-  return swapResponse.data;
+  const swapResponse = await axios.post(`https://lite-api.jup.ag/swap/v1/swap`, swapRequestBody);
+  return swapResponse;
 };
 
 const executeTransaction = async (connection, swapTransaction, anchorWallet) => {
@@ -108,14 +153,16 @@ const executeTransaction = async (connection, swapTransaction, anchorWallet) => 
     if (!anchorWallet?.keypair) {
       throw new Error("Invalid anchorWallet: keypair is undefined");
     }
+ 
 
     const transaction = VersionedTransaction.deserialize(Buffer.from(swapTransaction, "base64"));
     transaction.sign([anchorWallet.keypair]);
 
     let newMessage, newTransaction, rawTransaction, txid, timestart;
-    let blockhash = await connection.getLatestBlockhash();
-
+    
     if (SWAP_METHOD === "nozomi") {
+      console.log("Nozomi response: send via nozomi connection");
+      let blockhash = await connection.getLatestBlockhash();
       let message = transaction.message;
       let addressLookupTableAccounts = await loadAddressLookupTablesFromMessage(message, connection);
       let txMessage = TransactionMessage.decompile(message, { addressLookupTableAccounts });
@@ -142,14 +189,16 @@ const executeTransaction = async (connection, swapTransaction, anchorWallet) => 
 
       console.log("Nozomi response: txid: %s", txid);
     } else {
+      console.log("Standard/JITO/0slot/solana/race: send via normal connection");
       // Standard/JITO/0slot/solana/race: send via normal connection
       const currentUTC = new Date();
       rawTransaction = transaction.serialize();
       timestart = Date.now();
       txid = await sendAndConfirmRawTransaction(connection, Buffer.from(rawTransaction), {
-        skipPreflight: false,
+        skipPreflight: true,
         maxRetries: 1,
       });
+      
 
       console.log("Standard/JITO/0slot/solana/race response: txid: %s", txid);
       const endUTC = new Date();
@@ -174,27 +223,12 @@ async function loadAddressLookupTablesFromMessage(message, connection) {
   return addressLookupTableAccounts;
 }
 
-export const getBalance = async () => {
-  const startTime = Date.now();
-  const startUTC = new Date(startTime).toISOString();
-  const connection = rpc_connection();
-  const walletInstance = await loadwallet();
-  const balance = await connection.getBalance(walletInstance.publicKey);
-  const endTime = Date.now();
-  const endUTC = new Date(endTime).toISOString();
-  const diffMs = endTime - startTime;
-  const diffSec = (diffMs / 1000).toFixed(3);
-  console.log(`[${endUTC}] ( duration: ${diffMs}ms / ${diffSec}s) balance =>`, balance / LAMPORTS_PER_SOL, "SOL");
-  return balance / LAMPORTS_PER_SOL;
-};
 
 export const swap = async (action, mint, amount) => {
   const SOL_ADDRESS = "So11111111111111111111111111111111111111112";
   const RETRY_DELAY = Number(process.env.RETRY_DELAY) || 1000; // fallback to 1s if not set
 
   try {
-    const currentUTC = new Date();
-    console.log(`⌛⌛⌚⌚Starting swap at ${currentUTC.toUTCString()} (${currentUTC.getTime()}ms)`);
     const connection = rpc_connection();
     const wallet = await loadwallet();
 
@@ -233,22 +267,15 @@ export const swap = async (action, mint, amount) => {
           }
         }
 
-        const startTime = Date.now();
-        const quoteData = await getResponse(tokenA, tokenB, amount, process.env.SLIPPAGE_BPS || "50", wallet);
-        const endTime = Date.now();
-        console.log(chalk.blue(`getResponse took ${endTime - startTime}ms (${((endTime - startTime) / 1000).toFixed(2)}s)`));
-
+      
+        const quoteData = await getResponse(tokenA, tokenB, amount, process.env.SLIPPAGE_BPS || "5000", wallet);
+       
         if (!quoteData?.swapTransaction) {
           throw new Error("Failed to get swap transaction data");
         }
-
-        const startExecTime = Date.now();
+     
         const txid = await executeTransaction(connection, quoteData.swapTransaction, wallet);
-        const endExecTime = Date.now();
-        console.log(
-          chalk.blue(`executeTransaction took ${endExecTime - startExecTime}ms (${((endExecTime - startExecTime) / 1000).toFixed(2)}s)`)
-        );
-
+       
         if (!txid) {
           throw new Error("Transaction was not confirmed");
         }
@@ -256,10 +283,7 @@ export const swap = async (action, mint, amount) => {
         console.log(`--------------------------------------------------------\n
 ✌✌✌Swap successful! ${tokenA} for ${tokenB}`);
         console.log(`https://solscan.io/tx/${txid}\n`);
-        const endUTC = new Date();
-        const timeTaken = endUTC.getTime() - currentUTC.getTime();
-        console.log(`⏱️ Total time taken: ${timeTaken}ms (${(timeTaken / 1000).toFixed(2)}s)`);
-
+       
         return txid;
       } catch (error) {
         console.error(`Attempt ${retryCount + 1} failed:`, error.message);
