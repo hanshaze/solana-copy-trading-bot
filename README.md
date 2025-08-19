@@ -1,6 +1,20 @@
 # 🚀 Solana Raydium Sniper Bot
 
 A high-performance Solana trading bot that automatically snipes new token launches on Raydium, PumpFun, and PumpSwap using gRPC streaming for real-time transaction monitoring.
+## 0 Block available
+https://solscan.io/tx/3Rp2nV8JPdzxdCsX46Lt2rcUPAqLHubTbCUL4PRzAJknVfqiwQ8dTiYq7FHVSQ9ERMHhwi1pbaGDDVAAQ6uDtZRe  (My Wallet)
+
+https://solscan.io/tx/3M4HxfsfnGRK9nPBnh9RBqKZKaytEgjnRBk3ZWxXUTzpfWAz6PVW2Jxk28VGGWJohCb4iNMk1GrZ6dmCsuJ6w93F     (Target Wallet)
+
+
+https://solscan.io/tx/541UheAWxnLhTXR5rLD4rVWqUCuQeCfrLgyFcMqr6ZM2NtJ9CuyhVb9pGXGewNGHAaes2mzL17zPMK3uTZXzRjh4   (My Wallet)
+
+https://solscan.io/tx/3DBcECQCUwFAGEtpBjzh3Lxkm2JvBT2ADcP45ufc6DMYkRq6R3CGNudNFKvEDiLTTs1MivPKgfDPJTGDuJK3bCjE        (Target Wallet)
+
+
+https://solscan.io/tx/4EgSxC6Bi6qZkjTdzjprJrjRuKabhB57Hkbysb1jxwZRADy8FgHbvT5vMhXAxKFtmKKnSNK62nqKLKBm56mz53Sh (My Wallet)
+
+https://solscan.io/tx/veD5eiQX47Rr71dxhXcfMkHcowwb36GtGgTboJmajUhHRuEDqYnKmn2PhVDis2QT57GEc6mqkFSvpqkdUuok5MM           (Target Wallet)
 
 ## ✨ Features
 
