@@ -1,4 +1,4 @@
-# 🚀 Solana Raydium Sniper Bot
+# 🚀 Solana Raydium Sniper  copy trading Bot
 
 A high-performance Solana trading bot that automatically snipes new token launches on Raydium, PumpFun, and PumpSwap using gRPC streaming for real-time transaction monitoring.
 ## 0 Block available
