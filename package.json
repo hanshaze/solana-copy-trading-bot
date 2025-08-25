@@ -24,7 +24,7 @@
     "fs": "^0.0.1-security",
     "helius-sdk": "^1.4.2",
     "node-fetch": "^3.3.2",
-    "node-telegram-bot-api": "^0.63.0",
+    "node-telegram-bot-api": "^0.66.0",
     "pump-swap-core-v1": "^2.0.0",
     "readline-sync": "^1.4.10",
     "require": "^0.4.4",
